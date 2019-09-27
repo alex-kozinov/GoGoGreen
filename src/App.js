@@ -10,15 +10,17 @@ import Icon28ArticleOutline from '@vkontakte/icons/dist/28/article_outline';
 import Progress from './views/Progress';
 import Helper from './views/Helper';
 import Guides from './views/Guides';
-import Map from './views/Map';
+import MyMap from './views/MyMap';
 
+import "./styles/main.css"
 
 class App extends React.Component {
 	constructor (props) {
 		super(props);
 
 		this.state = {
-			activeStory: 'progress'
+			activeStory: 'progress',
+			callBackYmaps: {}
 		};
 		this.onStoryChange = this.onStoryChange.bind(this);
 	}
@@ -52,8 +54,8 @@ class App extends React.Component {
 					><Icon28Newsfeed /></TabbarItem>
 					<TabbarItem
 						onClick={this.onStoryChange}
-						selected={this.state.activeStory === 'map'}
-						data-story="map"
+						selected={this.state.activeStory === 'mymap'}
+						data-story="mymap"
 						text="Карта"
 					><Icon28Place /></TabbarItem>
 				</Tabbar>
@@ -61,7 +63,7 @@ class App extends React.Component {
 				<Progress id="progress"/>
 				<Helper id="helper"/>
 				<Guides id="guides"/>
-				<Map id="map"/>
+				<MyMap id="mymap"/>
 
 			</Epic>
 		)
