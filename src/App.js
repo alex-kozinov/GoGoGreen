@@ -7,6 +7,10 @@ import Icon28Search from '@vkontakte/icons/dist/28/search';
 import Icon28Place from '@vkontakte/icons/dist/28/place';
 import Icon28ArticleOutline from '@vkontakte/icons/dist/28/article_outline';
 
+import Progress from './views/Progress';
+import Helper from './views/Helper';
+import Guides from './views/Guides';
+import Map from './views/Map';
 
 
 class App extends React.Component {
@@ -14,7 +18,7 @@ class App extends React.Component {
 		super(props);
 
 		this.state = {
-			activeStory: 'history'
+			activeStory: 'progress'
 		};
 		this.onStoryChange = this.onStoryChange.bind(this);
 	}
@@ -54,26 +58,11 @@ class App extends React.Component {
 					><Icon28Place /></TabbarItem>
 				</Tabbar>
 			}>
-				<View id="progress" activePanel="progress">
-					<Panel id="progress">
-						<PanelHeader>Прогрес</PanelHeader>
-					</Panel>
-				</View>
-				<View id="helper" activePanel="helper">
-					<Panel id="helper">
-						<PanelHeader>Помощник</PanelHeader>
-					</Panel>
-				</View>
-				<View id="guides" activePanel="guides">
-					<Panel id="guides">
-						<PanelHeader>Гайды</PanelHeader>
-					</Panel>
-				</View>
-				<View id="map" activePanel="map">
-					<Panel id="map">
-						<PanelHeader>Карта</PanelHeader>
-					</Panel>
-				</View>
+				<Progress id="progress"/>
+				<Helper id="helper"/>
+				<Guides id="guides"/>
+				<Map id="map"/>
+
 			</Epic>
 		)
 	}
