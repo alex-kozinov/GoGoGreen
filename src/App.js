@@ -30,9 +30,9 @@ class App extends React.Component {
 				<Tabbar>
 					<TabbarItem
 						onClick={this.onStoryChange}
-						selected={this.state.activeStory === 'history'}
-						data-story="history"
-						text="История"
+						selected={this.state.activeStory === 'progress'}
+						data-story="progress"
+						text="Прогрес"
 					><Icon28ArticleOutline /></TabbarItem>
 					<TabbarItem
 						onClick={this.onStoryChange}
@@ -54,9 +54,9 @@ class App extends React.Component {
 					><Icon28Place /></TabbarItem>
 				</Tabbar>
 			}>
-				<View id="history" activePanel="history">
-					<Panel id="history">
-						<PanelHeader>История</PanelHeader>
+				<View id="progress" activePanel="progress">
+					<Panel id="progress">
+						<PanelHeader>Прогрес</PanelHeader>
 					</Panel>
 				</View>
 				<View id="helper" activePanel="helper">
