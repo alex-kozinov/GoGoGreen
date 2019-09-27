@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.js": "/GoGreen/static/js/main.04541d9b.chunk.js",
-    "main.js.map": "/GoGreen/static/js/main.04541d9b.chunk.js.map",
-    "runtime-main.js": "/GoGreen/static/js/runtime-main.84ab447f.js",
-    "runtime-main.js.map": "/GoGreen/static/js/runtime-main.84ab447f.js.map",
+    "main.css": "/GoGreen/static/css/main.b310fb38.chunk.css",
+    "main.js": "/GoGreen/static/js/main.00fbc3cb.chunk.js",
+    "main.js.map": "/GoGreen/static/js/main.00fbc3cb.chunk.js.map",
+    "runtime-main.js": "/GoGreen/static/js/runtime-main.00a3087a.js",
+    "runtime-main.js.map": "/GoGreen/static/js/runtime-main.00a3087a.js.map",
     "static/css/2.4e89ce74.chunk.css": "/GoGreen/static/css/2.4e89ce74.chunk.css",
-    "static/js/2.63330368.chunk.js": "/GoGreen/static/js/2.63330368.chunk.js",
-    "static/js/2.63330368.chunk.js.map": "/GoGreen/static/js/2.63330368.chunk.js.map",
+    "static/js/2.1d19094f.chunk.js": "/GoGreen/static/js/2.1d19094f.chunk.js",
+    "static/js/2.1d19094f.chunk.js.map": "/GoGreen/static/js/2.1d19094f.chunk.js.map",
     "index.html": "/GoGreen/index.html",
-    "precache-manifest.88501d505007f0143c3d361eb8bbe8c1.js": "/GoGreen/precache-manifest.88501d505007f0143c3d361eb8bbe8c1.js",
+    "precache-manifest.ae641c9b56cd7ab56b68db48577d9a77.js": "/GoGreen/precache-manifest.ae641c9b56cd7ab56b68db48577d9a77.js",
     "service-worker.js": "/GoGreen/service-worker.js",
-    "static/css/2.4e89ce74.chunk.css.map": "/GoGreen/static/css/2.4e89ce74.chunk.css.map"
+    "static/css/2.4e89ce74.chunk.css.map": "/GoGreen/static/css/2.4e89ce74.chunk.css.map",
+    "static/css/main.b310fb38.chunk.css.map": "/GoGreen/static/css/main.b310fb38.chunk.css.map"
   }
 }
