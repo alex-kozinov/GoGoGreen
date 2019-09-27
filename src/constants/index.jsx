@@ -1,4 +1,4 @@
-const pages = [
+export const pages = [
     {
         id: 0,
         title: "Почему эта важно",

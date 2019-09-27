@@ -2,14 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Panel, PanelHeader, HeaderButton, Search, Group, Footer, List, Cell, View} from '@vkontakte/vkui';
 import Progress from "./Progress";
-import GuideItem  from "../components/guideitem";
+import GuideItem from "../components/guideitem";
+import {pages} from "../constants";
 
 
 const Guides = props => (
     <View id={props.id} activePanel="guides">
         <Panel id="guides">
-            <PanelHeader>Гайды</PanelHeader>
-            <GuideItem/>
+            <PanelHeader>Guides</PanelHeader>
+            {
+                pages.map(
+                    (item) => <GuideItem title={item.title} description={item.description}/>
+                )
+            }
         </Panel>
     </View>
 );
