@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.js": "/GoGreen/static/js/main.fb0733dc.chunk.js",
+    "main.js.map": "/GoGreen/static/js/main.fb0733dc.chunk.js.map",
+    "runtime-main.js": "/GoGreen/static/js/runtime-main.84ab447f.js",
+    "runtime-main.js.map": "/GoGreen/static/js/runtime-main.84ab447f.js.map",
+    "static/css/2.4e89ce74.chunk.css": "/GoGreen/static/css/2.4e89ce74.chunk.css",
+    "static/js/2.63330368.chunk.js": "/GoGreen/static/js/2.63330368.chunk.js",
+    "static/js/2.63330368.chunk.js.map": "/GoGreen/static/js/2.63330368.chunk.js.map",
+    "index.html": "/GoGreen/index.html",
+    "precache-manifest.aaa31fc99824c9f680d891f469de4a7e.js": "/GoGreen/precache-manifest.aaa31fc99824c9f680d891f469de4a7e.js",
+    "service-worker.js": "/GoGreen/service-worker.js",
+    "static/css/2.4e89ce74.chunk.css.map": "/GoGreen/static/css/2.4e89ce74.chunk.css.map"
+  }
+}
