@@ -1,31 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0da6cab9667ad7d17d4cb0c6a8528619",
+    "revision": "970cee3c18daf20a85aa3cc50b737130",
     "url": "/GoGreen/index.html"
   },
   {
-    "revision": "866a7a34a74c39c88b1a",
+    "revision": "5d314d771e650c0e0c7e",
     "url": "/GoGreen/static/css/2.4e89ce74.chunk.css"
   },
   {
-    "revision": "84801b177307da3de4c7",
-    "url": "/GoGreen/static/css/main.188e6cac.chunk.css"
+    "revision": "30e823cf9e6b76549f79",
+    "url": "/GoGreen/static/css/main.d2b51296.chunk.css"
   },
   {
-    "revision": "866a7a34a74c39c88b1a",
-    "url": "/GoGreen/static/js/2.556bbd4b.chunk.js"
+    "revision": "5d314d771e650c0e0c7e",
+    "url": "/GoGreen/static/js/2.c9e3ebfe.chunk.js"
   },
   {
-    "revision": "84801b177307da3de4c7",
-    "url": "/GoGreen/static/js/main.23fc01d5.chunk.js"
+    "revision": "30e823cf9e6b76549f79",
+    "url": "/GoGreen/static/js/main.347d59e8.chunk.js"
   },
   {
     "revision": "78c2af6ac9a87bb1e3a8",
     "url": "/GoGreen/static/js/runtime-main.00a3087a.js"
   },
   {
-    "revision": "6ccc35fefa58f820609979457784bf7b",
-    "url": "/GoGreen/static/media/Nachalo.6ccc35fe.png"
+    "revision": "0cbb504766a9c67245276ed95e3c3a52",
+    "url": "/GoGreen/static/media/Nachalo.0cbb5047.png"
   },
   {
     "revision": "49982d5a92a37d3a8c3daf1d9fcf4dcd",
