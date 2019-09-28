@@ -1,0 +1,37 @@
+.upper-side {
+    height: 70%;
+}
+
+.lower-side {
+    height: 30%;
+}
+
+.dialog-colors {
+    background: #969696;
+}
+
+.texts-styles {
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 40%;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.top-container {
+    margin: auto;
+    max-width: 100%;
+    width: 400px;
+    display: flex;
+}
+
+.text-box {
+    width: 50%;
+}
+
+.image-box {
+    flex: 1;
+    min-width: 0;
+}
