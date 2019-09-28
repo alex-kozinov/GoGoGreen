@@ -76,7 +76,7 @@ class QuestPanel extends React.Component {
 
     handleClick() {
         this.changeProgress(1);
-        this.props.goClick(this.state.progress[this.state.mode], this.state);
+        this.props.goClick(this.state.progress[this.state.mode]);
     }
 
     render() {
