@@ -12,17 +12,17 @@ export class GalleryItem extends React.Component {
 
     render() {
         return (
-            <Div title={this.props.title} style={{height: '300%'}}>
+            <Div title={this.props.title} style={{height: '40vh'}}>
                 <Gallery
                     align='left'
                     slideWidth='custom'
-                    style={{height: 300}}
+                    style={{height: '100%'}}
                 >
                     {
                         this.props.guides.map(
                             (idx) =>
-                                <div style={{padding: '5px', height: 300, width: "%"}}>
-                                    <img src={guides[idx].image} style={{width: "100%"}}>
+                                <div style={{padding: '5px', height: '100%'}}>
+                                    <img src={guides[idx].image} style={{ height: '100%'}}>
                                     </img>
                                 </div>
                         )

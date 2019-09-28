@@ -33,7 +33,7 @@ export class Guides extends React.Component {
     render() {
         return (
             <View id={this.props.id} activePanel={this.state.activePanel}>
-                <Panel id={"gallary"} style={{height: "300%"}}>
+                <Panel id={"gallary"}>
                     <PanelHeader>Гайды</PanelHeader>
                     {
                         galleries.map(
