@@ -67,13 +67,13 @@ class QuestPanel extends React.Component {
         return <Panel id={this.props.id}>
             <PanelHeader>
                 <PanelHeaderContent aside={<Icon16Dropdown/>} onClick={this.toggleContext}>
-                    {this.state.mode === 'plastic' ?  'Пластик' : 'Стекло'}
+                    {this.state.mode === 'plastic' ? 'Пластик' : 'Стекло'}
                 </PanelHeaderContent>
             </PanelHeader>
             <HeaderContext opened={this.state.contextOpened} onClose={this.toggleContext}>
                 <List>
                     <Cell
-                        before={<Icon24Users />}
+                        before={<Icon24Users/>}
                         asideContent={this.state.mode === "plastic" ? <Icon24Done fill="var(--accent)"/> : null}
                         onClick={this.select}
                         data-mode="plastic"
@@ -81,7 +81,7 @@ class QuestPanel extends React.Component {
                         Пластик
                     </Cell>
                     <Cell
-                        before={<Icon24Settings />}
+                        before={<Icon24Settings/>}
                         asideContent={this.state.mode === "glass" ? <Icon24Done fill="var(--accent)"/> : null}
                         onClick={this.select}
                         data-mode="glass"
@@ -90,27 +90,16 @@ class QuestPanel extends React.Component {
                     </Cell>
                 </List>
             </HeaderContext>
-            <Group>
-                <Div>
-                    <InfoRow title="Прогресс озеленения">
-                        <Progress value={this.state.progress[this.state.mode]}/>
-                    </InfoRow>
-                </Div>
-            </Group>
+            <Div>
+                /* Черепахен */
+            </Div>
+            <Div>
+                <InfoRow title="Прогресс озеленения">
+                    <Progress value={this.state.progress[this.state.mode]}/>
+                </InfoRow>
+            </Div>
+            
 
-            <FixedLayout vertical="bottom">
-                <Group>
-                    <FormLayout>
-                        <Button size="xl" level="secondary" onClick={() => this.changeProgress(-10)}>
-                            Назад
-                        </Button>
-
-                        <Button size="xl" level="secondary" onClick={() => this.changeProgress(10)}>
-                            Вперёд
-                        </Button>
-                    </FormLayout>
-                </Group>
-            </FixedLayout>
         </Panel>
     }
 }
