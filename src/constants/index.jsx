@@ -21,7 +21,7 @@ export const guides = [
 export const galleries = [
     {
         title: 'Example',
-        guides: [0, 1, 1, 0],
+        guides: [0, 1, 1, 0, 1, 0],
     },
 ];
 
