@@ -31,8 +31,8 @@ class QuestPanel extends React.Component {
 
         this.state = {
             activePanel: "progress",
-            progress: 40,
-            contextOpened: true,
+            progress: {'plastic': 40, 'glass': 40},
+            contextOpened: false,
             mode: "plastic"
         };
 
@@ -54,9 +54,11 @@ class QuestPanel extends React.Component {
     }
 
     changeProgress(val) {
-        let newProgress = this.state.progress + val;
-        newProgress = Math.min(100, newProgress);
-        newProgress = Math.max(0, newProgress);
+        let newProgress = this.state.progress;
+        let newValue = newProgress[this.state.mode] + val;
+        newValue = Math.min(100, newValue);
+        newValue = Math.max(0, newValue);
+        newProgress[this.state.mode] = newValue;
 
         this.setState({progress: newProgress});
     }
@@ -91,7 +93,7 @@ class QuestPanel extends React.Component {
             <Group>
                 <Div>
                     <InfoRow title="Прогресс озеленения">
-                        <Progress value={this.state.progress}/>
+                        <Progress value={this.state.progress[this.state.mode]}/>
                     </InfoRow>
                 </Div>
             </Group>
