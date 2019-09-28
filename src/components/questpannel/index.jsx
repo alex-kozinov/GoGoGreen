@@ -22,6 +22,7 @@ import Icon24Done from '@vkontakte/icons/dist/24/done';
 import Icon24Settings from '@vkontakte/icons/dist/24/settings';
 import Icon24Users from '@vkontakte/icons/dist/24/users';
 import Icon16Dropdown from '@vkontakte/icons/dist/16/dropdown';
+import cherepahen from '../../imgs/turtle.png'
 
 class QuestPanel extends React.Component {
     constructor(props) {
@@ -63,6 +64,10 @@ class QuestPanel extends React.Component {
         this.setState({progress: newProgress});
     }
 
+    handleClick() {
+
+    }
+
     render() {
         return <Panel id={this.props.id}>
             <PanelHeader>
@@ -90,15 +95,21 @@ class QuestPanel extends React.Component {
                     </Cell>
                 </List>
             </HeaderContext>
-            <Div>
-                /* Черепахен */
+            <Div
+                style={{height: '40vh', width: '80vw', justifyContent: 'center', marginTop: '5vh', marginBottom: '5vh'}}
+                align='center'>
+                <img src={cherepahen} style={{height: '100%', width: 'auto'}}/>
             </Div>
-            <Div>
+            <Div style={{marginLeft: '10vw', marginRight: '10vw'}}>
                 <InfoRow title="Прогресс озеленения">
                     <Progress value={this.state.progress[this.state.mode]}/>
                 </InfoRow>
             </Div>
-            
+            <Div align='center'>
+                <Button level="outline" size='xl' style={{marginTop: '10vh'}} onClick={() => {}}>
+                    Go
+                </Button>
+            </Div>
 
         </Panel>
     }
