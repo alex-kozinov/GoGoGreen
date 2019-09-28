@@ -9,7 +9,14 @@ import pointsPlastic from "./data/pointPlastic.json"
 import pointsPapes from "./data/pointsPapes.json"
 import pointsGlases from "./data/pointsGlases.json"
 
+import img_plastik from "../imgs/plastik.png"
+import img_paper from "../imgs/bumaga.png"
+import img_glas from "../imgs/steklo.png"
+
 import { tsConstructSignatureDeclaration } from '@babel/types';
+
+const img_size = [60, 80];
+const img_offset = [30, -80];
 
 export default class MyMap extends React.Component {
     constructor(props) {
@@ -19,7 +26,8 @@ export default class MyMap extends React.Component {
             id: props.id,
             isPlastic: false,
             isPaper: false,
-            isGlases: false
+            isGlases: false,
+            buffer : []
         }
         this.changeSearch = this.changeSearch.bind(this);
         this.getPointDataForGlases = this.getPointDataForGlases.bind(this);
@@ -31,10 +39,9 @@ export default class MyMap extends React.Component {
         this.getPointOptionsForPlastic = this.getPointOptionsForPlastic.bind(this);
     }
 
-
     getPointDataForPlastic() {
         return {
-            balloonContent: "Дом пластика"
+            hintContent: "Дом пластика"
         };
     };
     getPointDataForPaper() {
@@ -50,17 +57,26 @@ export default class MyMap extends React.Component {
 
     getPointOptionsForPlastic() {
         return {
-            iconColor: "red"
+            iconLayout: 'default#image',
+            iconImageHref: img_plastik,
+            iconImageSize: img_size,
+            iconImageOffset: img_offset
         };
     };
     getPointOptionsForPaper() {
         return {
-            iconColor: "green"
+            iconLayout: 'default#image',
+            iconImageHref: img_paper,
+            iconImageSize: img_size,
+            iconImageOffset: img_offset
         };
     };
     getPointOptionsForGlases() {
         return {
-            iconColor: "blue"
+            iconLayout: 'default#image',
+            iconImageHref: img_glas,
+            iconImageSize: img_size,
+            iconImageOffset: img_offset
         };
     };
 
@@ -82,7 +98,7 @@ export default class MyMap extends React.Component {
     }
 
     printFromJson(j, properties, options) {
-        console.log(properties);
+        console.log(options);
         return (j.map((coordinates, idx) => (
             <Placemark
               key={idx}
@@ -117,28 +133,28 @@ export default class MyMap extends React.Component {
                         <YMaps>
                                 <Map className="all_window"
                                     defaultState = {{ 
-                                        center: [59.939095, 30.315868], 
+                                        center: [55.753215, 37.622504], 
                                     zoom: 10
                                         }}
                                 >
                                     <ListBox data = {{ content: "Что относим на свалку?" }}>
                                         <ListBoxItem onClick={() => this.changeSearch("plastic")} data = {{ content: "Пластик" }} />
                                         <ListBoxItem onClick={() => this.changeSearch("paper")} data = {{ content: "Бумагу" }} />
-                                        <ListBoxItem onClick={() => this.changeSearch("glases")} data = {{ content: "Соперников" }} />
+                                        <ListBoxItem onClick={() => this.changeSearch("glases")} data = {{ content: "Стекло" }} />
                                     </ListBox>
 
                                     <Clusterer
                                         options={{
-                                        preset: "islands#invertedVioletClusterIcons",
-                                        groupByCoordinates: false,
-                                        clusterDisableClickZoom: true,
-                                        clusterHideIconOnBalloonOpen: false,
-                                        geoObjectHideIconOnBalloonOpen: false
+                                            preset: 'islands#blackClusterIcons',
+                                            // iconColor: "#12f9ab",
+                                            groupByCoordinates: false,
+                                            clusterDisableClickZoom: true,
+                                            clusterHideIconOnBalloonOpen: false,
+                                            geoObjectHideIconOnBalloonOpen: false
                                         }}
                                     >
-
+                                        {this.printPlacemark()}
                                     </Clusterer>
-                                    {this.printPlacemark()}
                                 </Map>
                         </YMaps>
                     </FixedLayout>

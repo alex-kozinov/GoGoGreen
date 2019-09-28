@@ -10,25 +10,31 @@ import {
 } from '@vkontakte/vkui';
 
 import GalleryItem from "../components/galaryitem/galaryitem";
+import GuideReader from "../panels/guidereader";
 import {galleries, guides} from "../constants";
-import Icon24Back from '@vkontakte/icons/dist/24/back';
-import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
+
 
 export class Guides extends React.Component {
     constructor(props) {
         super(props);
         this.osname = platform();
         this.state = {
-            currentGuide: 0,
             activePanel: "guides",
         };
+        this.currGuide = 0;
+
         this.handleGuideClick = this.handleGuideClick.bind(this);
+        this.handleBackClick = this.handleBackClick.bind(this);
     }
 
     handleGuideClick(guideNumber) {
-        this.setState({currentGuide: guideNumber, activePanel: 'reading'});
+        this.setState({activePanel: 'reading'});
+        this.currGuide = guideNumber;
     }
 
+    handleBackClick() {
+        this.setState({activePanel: "guides"})
+    }
     render() {
         return (
             <View id={this.props.id} activePanel={this.state.activePanel}>
@@ -36,39 +42,17 @@ export class Guides extends React.Component {
                     <PanelHeader>Гайды</PanelHeader>
                     {
                         galleries.map(
-                            (item) => <GalleryItem guides={item.guides} title={item.title}
+                            (item, idx) => <GalleryItem key={idx} guides={item.guides} title={item.title}
                                                    onClick={(idx) => this.handleGuideClick(idx)}/>
                         )
                     }
                 </Panel>
 
-                <Panel id={"reading"}>
-                    <PanelHeader
-                        left=
-                            {
-                                <HeaderButton onClick={() => this.setState({currentGuide: 0, activePanel: "guides"})}>
-                                    {this.osname === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}
-                                </HeaderButton>
-                            }
-                        addon=
-                            {
-                                <HeaderButton onClick={() => this.setState({currentGuide: 0, activePanel: "guides"})}>
-                                    Назад
-                                </HeaderButton>
-                            }
-                    >
-                        {
-                            guides[this.state.currentGuide].title
-                        }
-                    </PanelHeader>
-                    {
-                        guides[this.state.currentGuide].article
-                    }
-                </Panel>
+                <GuideReader id={'reading'} guideID={this.currGuide} backClick={this.handleBackClick}/>
             </View>
         );
     }
-};
+}
 
 Guides.propTypes = {
     id: PropTypes.string.isRequired,
