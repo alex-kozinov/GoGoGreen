@@ -1,18 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {FormLayout, Button, Tabs, TabsItem, FixedLayout, Div, InfoRow, Panel, PanelHeader,  Group, View, Progress} from '@vkontakte/vkui';
-import QuestPannel from "../components/questpannel";
+import QuestPanel from "../components/questpannel";
 
 class ProgressPage extends React.Component {
     constructor(props) {
         super(props);
-
-
     }
 
     render() {
         return <View id={this.props.id} activePanel="progress">
-        <QuestPannel id={'progress'}/>
+        <QuestPanel id={'progress'}/>
         </View>
     }
 }
