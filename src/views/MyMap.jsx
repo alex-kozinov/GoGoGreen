@@ -133,14 +133,14 @@ export default class MyMap extends React.Component {
                         <YMaps>
                                 <Map className="all_window"
                                     defaultState = {{ 
-                                        center: [55.831903, 37.411961], 
+                                        center: [55.753215, 37.622504], 
                                     zoom: 10
                                         }}
                                 >
                                     <ListBox data = {{ content: "Что относим на свалку?" }}>
                                         <ListBoxItem onClick={() => this.changeSearch("plastic")} data = {{ content: "Пластик" }} />
                                         <ListBoxItem onClick={() => this.changeSearch("paper")} data = {{ content: "Бумагу" }} />
-                                        <ListBoxItem onClick={() => this.changeSearch("glases")} data = {{ content: "Соперников" }} />
+                                        <ListBoxItem onClick={() => this.changeSearch("glases")} data = {{ content: "Стекло" }} />
                                     </ListBox>
 
                                     <Clusterer
