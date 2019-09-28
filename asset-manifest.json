@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/GoGreen/static/css/main.d76822d1.chunk.css",
-    "main.js": "/GoGreen/static/js/main.7b05d5b3.chunk.js",
-    "main.js.map": "/GoGreen/static/js/main.7b05d5b3.chunk.js.map",
+    "main.css": "/GoGreen/static/css/main.188e6cac.chunk.css",
+    "main.js": "/GoGreen/static/js/main.db94c0df.chunk.js",
+    "main.js.map": "/GoGreen/static/js/main.db94c0df.chunk.js.map",
     "runtime-main.js": "/GoGreen/static/js/runtime-main.00a3087a.js",
     "runtime-main.js.map": "/GoGreen/static/js/runtime-main.00a3087a.js.map",
     "static/css/2.4e89ce74.chunk.css": "/GoGreen/static/css/2.4e89ce74.chunk.css",
-    "static/js/2.cf4a22f4.chunk.js": "/GoGreen/static/js/2.cf4a22f4.chunk.js",
-    "static/js/2.cf4a22f4.chunk.js.map": "/GoGreen/static/js/2.cf4a22f4.chunk.js.map",
+    "static/js/2.5f33fa69.chunk.js": "/GoGreen/static/js/2.5f33fa69.chunk.js",
+    "static/js/2.5f33fa69.chunk.js.map": "/GoGreen/static/js/2.5f33fa69.chunk.js.map",
     "index.html": "/GoGreen/index.html",
-    "precache-manifest.0746851c48c77513336f176cf5fed3ff.js": "/GoGreen/precache-manifest.0746851c48c77513336f176cf5fed3ff.js",
+    "precache-manifest.8af3b64fed96fd6fb2dcb990b16e9ecd.js": "/GoGreen/precache-manifest.8af3b64fed96fd6fb2dcb990b16e9ecd.js",
     "service-worker.js": "/GoGreen/service-worker.js",
     "static/css/2.4e89ce74.chunk.css.map": "/GoGreen/static/css/2.4e89ce74.chunk.css.map",
-    "static/css/main.d76822d1.chunk.css.map": "/GoGreen/static/css/main.d76822d1.chunk.css.map",
-    "static/media/akinator.png": "/GoGreen/static/media/akinator.49982d5a.png"
+    "static/css/main.188e6cac.chunk.css.map": "/GoGreen/static/css/main.188e6cac.chunk.css.map",
+    "static/media/akinator.png": "/GoGreen/static/media/akinator.49982d5a.png",
+    "static/media/default.jpg": "/GoGreen/static/media/default.b79a8f2d.jpg"
   }
 }
