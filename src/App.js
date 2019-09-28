@@ -39,12 +39,12 @@ class App extends React.Component {
                         data-story="progress"
                         text="Прогрес"
                     ><Icon28ArticleOutline/></TabbarItem>
-                    <TabbarItem
+                    {/*<TabbarItem
                         onClick={this.onStoryChange}
                         selected={this.state.activeStory === 'helper'}
                         data-story="helper"
                         text="Помощник"
-                    ><Icon28Search/></TabbarItem>
+                    ><Icon28Search/></TabbarItem>*/}
                     <TabbarItem
                         onClick={this.onStoryChange}
                         selected={this.state.activeStory === 'guides'}
