@@ -33,7 +33,7 @@ class QuestPannel extends React.Component{
         new_progress = Math.max(0, new_progress);
         this.setState({progress: new_progress})
     }
-    
+
     render() {
         return <Panel id={this.props.id}>
             <PanelHeader>Прогрес</PanelHeader>

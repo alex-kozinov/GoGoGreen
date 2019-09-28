@@ -19,7 +19,7 @@ export class GalleryItem extends React.Component {
                     {
                         this.props.guides.map(
                             (idx) =>
-                                <div style={{padding: '5px', width: '40vh'}}>
+                                <div style={{padding: '0.7vh', width: '47vh'}}>
                                     <img src={guides[idx].image} style={{maxWidth: '100%', height: 'auto'}}
                                          alt='guide image' onClick={() => this.props.onClick(guides[idx].id)}/>
                                 </div>
