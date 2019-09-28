@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e7efadac2f48575b504212d7c564dd38",
+    "revision": "4a714be6dae775fd1a077179067bfe66",
     "url": "/GoGreen/index.html"
   },
   {
-    "revision": "3a9e463d4a7438b0ff8e",
+    "revision": "d5bd142c8a226a26ebf0",
     "url": "/GoGreen/static/css/2.4e89ce74.chunk.css"
   },
   {
-    "revision": "3ba0a0ca03b729a37e48",
+    "revision": "45fff2e2b37dd94d081d",
     "url": "/GoGreen/static/css/main.188e6cac.chunk.css"
   },
   {
-    "revision": "3a9e463d4a7438b0ff8e",
-    "url": "/GoGreen/static/js/2.50f5ce64.chunk.js"
+    "revision": "d5bd142c8a226a26ebf0",
+    "url": "/GoGreen/static/js/2.0c8fec93.chunk.js"
   },
   {
-    "revision": "3ba0a0ca03b729a37e48",
-    "url": "/GoGreen/static/js/main.5e11989a.chunk.js"
+    "revision": "45fff2e2b37dd94d081d",
+    "url": "/GoGreen/static/js/main.02acf9a5.chunk.js"
   },
   {
     "revision": "78c2af6ac9a87bb1e3a8",
