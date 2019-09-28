@@ -8,3 +8,9 @@
   font-size: 120%;
   margin: 20px 20% 0px 20%;
 }
+.gogreen {
+  background: green;
+}
+PanelHeader {
+  background: green;
+}

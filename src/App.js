@@ -31,7 +31,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <Epic activeStory={this.state.activeStory} tabbar={
+            <Epic className="gogreen" activeStory={this.state.activeStory} tabbar={
                 <Tabbar>
                     <TabbarItem
                         onClick={this.onStoryChange}

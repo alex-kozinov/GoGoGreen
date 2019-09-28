@@ -24,13 +24,24 @@ class ProgressPage extends React.Component {
             activePanel: "progress",
             guideId: 0
         };
+        this.Panel = {
+            activePanel: "progress",
+            progress: {},
+            maxProgress: {},
+            contextOpened: false,
+            mode: "plastic",
+            first: true,
+            galleries: {}
+        }
 
         this.handleGoClick = this.handleGoClick.bind(this);
         this.handleBackClick = this.handleBackClick.bind(this);
     }
 
-    handleGoClick(guideId) {
-        this.setState({activePanel: 'reading', guideId: guideId});
+    handleGoClick(guideId, newPanel) {
+        this.Panel = newPanel;
+        this.setState({activePanel: 'reading'});
+        this.setState({guideId: guideId});
     }
 
     handleBackClick() {
@@ -39,7 +50,7 @@ class ProgressPage extends React.Component {
 
     render() {
         return <View id={this.props.id} activePanel={this.state.activePanel}>
-            <QuestPanel id='progress' goClick={this.handleGoClick}/>
+            <QuestPanel id='progress' Panel={this.Panel} goClick={this.handleGoClick}/>
             <GuideReader id='reading' backClick={this.handleBackClick} guideID={this.state.guideId}/>
         </View>
     }

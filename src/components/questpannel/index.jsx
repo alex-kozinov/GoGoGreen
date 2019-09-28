@@ -29,22 +29,33 @@ class QuestPanel extends React.Component {
     constructor(props) {
         super(props);
 
+        this.props = props;
+
         this.osname = platform();
         this.state = {
             activePanel: "progress",
             progress: {},
             maxProgress: {},
             contextOpened: false,
-            mode: "plastic"
+            mode: "plastic",
+            first: true,
+            galleries: {}
         };
 
-        let galleriesNames = galleries.map((dict) => [dict.title, dict.guides.length]);
-        galleriesNames.map((item) => {
-            this.state.progress[item[0]] = 0
-        });
-        galleriesNames.map((item) => {
-            this.state.maxProgress[item[0]] = item[1]
-        });
+        this.state = this.props.Panel;
+    
+        if (this.state.first) {
+            this.state.first = false;
+            let galleriesNames = galleries.map((dict) => [dict.title, dict.guides.length]);
+            galleries.map((dict) => this.state.galleries[dict.title] = dict.guides);
+            
+            galleriesNames.map((item) => {
+                this.state.progress[item[0]] = 0
+            });
+            galleriesNames.map((item) => {
+                this.state.maxProgress[item[0]] = item[1]
+            });
+        }
 
         this.changeProgress = this.changeProgress.bind(this);
         this.toggleContext = this.toggleContext.bind(this);
@@ -76,7 +87,7 @@ class QuestPanel extends React.Component {
 
     handleClick() {
         this.changeProgress(1);
-        this.props.goClick(this.state.progress[this.state.mode], this.state);
+        this.props.goClick(this.state.galleries[this.state.mode][this.state.progress[this.state.mode] - 1], this.state);
     }
 
     render() {
