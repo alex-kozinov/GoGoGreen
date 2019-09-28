@@ -25,8 +25,8 @@ class App extends React.Component {
         this.onStoryChange = this.onStoryChange.bind(this);
     }
 
-    onStoryChange(e) {
-        this.setState({activeStory: e.currentTarget.dataset.story})
+    onStoryChange(entity) {
+        this.setState({activeStory: entity.currentTarget.dataset.story})
     }
 
     render() {
