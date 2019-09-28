@@ -7,7 +7,7 @@ import Icon28Search from '@vkontakte/icons/dist/28/search';
 import Icon28Place from '@vkontakte/icons/dist/28/place';
 import Icon28ArticleOutline from '@vkontakte/icons/dist/28/article_outline';
 
-import Progress from './views/Progress';
+import ProgressPage from './views/ProgressPage';
 import Helper from './views/Helper';
 import Guides from './views/Guides';
 import MyMap from './views/MyMap';
@@ -59,7 +59,7 @@ class App extends React.Component {
                     ><Icon28Place/></TabbarItem>
                 </Tabbar>
             }>
-                <Progress id="progress"/>
+                <ProgressPage id="progress"/>
                 <Helper id="helper"/>
                 <Guides id="guides"/>
                 <MyMap id="mymap"/>

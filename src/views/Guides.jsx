@@ -4,16 +4,10 @@ import {
     Panel,
     PanelHeader,
     HeaderButton,
-    Search,
-    Group,
-    Footer,
-    List,
-    Cell,
     View,
     IOS,
     platform
 } from '@vkontakte/vkui';
-import Progress from "./Progress";
 import GuideItem from "../components/guideitem";
 import {pages} from "../constants";
 import Icon24Back from '@vkontakte/icons/dist/24/back';

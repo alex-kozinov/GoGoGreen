@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {PanelHeaderBack, Input, Panel, PanelHeader, HeaderButton, Search, Group, Footer, List, Cell, View, FixedLayout} from '@vkontakte/vkui';
-import Progress from "./Progress";
 import { ListBoxItem, ListBox, YMaps, Map, Placemark } from 'react-yandex-maps';
 import '../styles/main.css';
 
