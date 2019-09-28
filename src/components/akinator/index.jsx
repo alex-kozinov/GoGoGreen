@@ -13,13 +13,22 @@ export class Akinator extends React.Component {
         return (
             <table className={'all_window'}>
                 <tr className={'upper-side'}>
-                    <div className={'question-shape dialog-colors texts-styles question-pos'}>
-                        <p>Привет!</p>
+                    <div className={'top-container'}>
+                        <div className={'text-box'}>
+                            <div clasName={'text-styles dialog-colors'}>
+                                Привет!
+                            </div>
+                        </div>
+                        <div className={'image-box'}>
+                            <img src={akinator} className={'akinator-position'}/>
+                        </div>
                     </div>
-                    <img src={akinator} className={'akinator-position'}/>
+
                 </tr>
                 <tr className={'lower-side'}>
-                    <p>SEcond page</p>
+                    <div className={'relative-test'}>
+                        <div className={'test'}/>
+                    </div>
                 </tr>
             </table>
         );
