@@ -23,23 +23,33 @@ import Icon24Settings from '@vkontakte/icons/dist/24/settings';
 import Icon24Users from '@vkontakte/icons/dist/24/users';
 import Icon16Dropdown from '@vkontakte/icons/dist/16/dropdown';
 import cherepahen from '../../imgs/turtle.png'
+import {galleries} from '../../constants'
 
 class QuestPanel extends React.Component {
     constructor(props) {
         super(props);
 
         this.osname = platform();
-
         this.state = {
             activePanel: "progress",
-            progress: {'plastic': 40, 'glass': 40},
+            progress: {},
+            maxProgress: {},
             contextOpened: false,
             mode: "plastic"
         };
 
+        let galleriesNames = galleries.map((dict) => [dict.title, dict.guides.length]);
+        galleriesNames.map((item) => {
+            this.state.progress[item[0]] = 0
+        });
+        galleriesNames.map((item) => {
+            this.state.maxProgress[item[0]] = item[1]
+        });
+
         this.changeProgress = this.changeProgress.bind(this);
         this.toggleContext = this.toggleContext.bind(this);
         this.select = this.select.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     toggleContext() {
@@ -57,7 +67,7 @@ class QuestPanel extends React.Component {
     changeProgress(val) {
         let newProgress = this.state.progress;
         let newValue = newProgress[this.state.mode] + val;
-        newValue = Math.min(100, newValue);
+        newValue = Math.min(this.state.maxProgress[this.state.mode], newValue);
         newValue = Math.max(0, newValue);
         newProgress[this.state.mode] = newValue;
 
@@ -65,7 +75,8 @@ class QuestPanel extends React.Component {
     }
 
     handleClick() {
-
+        this.changeProgress(1);
+        this.props.goClick(this.state.progress[this.state.mode], this.state);
     }
 
     render() {
@@ -102,21 +113,22 @@ class QuestPanel extends React.Component {
             </Div>
             <Div style={{marginLeft: '10vw', marginRight: '10vw'}}>
                 <InfoRow title="Прогресс озеленения">
-                    <Progress value={this.state.progress[this.state.mode]}/>
+                    <Progress
+                        value={100 / this.state.maxProgress[this.state.mode] * this.state.progress[this.state.mode]}/>
                 </InfoRow>
             </Div>
             <Div align='center'>
-                <Button level="outline" size='xl' style={{marginTop: '10vh'}} onClick={() => {}}>
+                <Button level="outline" size='xl' style={{marginTop: '10vh'}} onClick={this.handleClick}>
                     Go
                 </Button>
             </Div>
-
         </Panel>
     }
 }
 
 QuestPanel.propTypes = {
     id: PropTypes.string.isRequired,
+    goClick: PropTypes.func.isRequired
 };
 
 export default QuestPanel;

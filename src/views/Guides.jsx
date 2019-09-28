@@ -28,13 +28,14 @@ export class Guides extends React.Component {
     }
 
     handleGuideClick(guideNumber) {
-        this.setState({activePanel: 'reading'});
         this.currGuide = guideNumber;
+        this.setState({activePanel: 'reading'});
     }
 
     handleBackClick() {
         this.setState({activePanel: "guides"})
     }
+
     render() {
         return (
             <View id={this.props.id} activePanel={this.state.activePanel}>
