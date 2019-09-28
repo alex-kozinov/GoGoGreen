@@ -4,3 +4,7 @@
   width: 100vw;
   height: 100vh;
 }
+.context {
+  font-size: 120%;
+  margin: 20px 20% 0px 20%;
+}
