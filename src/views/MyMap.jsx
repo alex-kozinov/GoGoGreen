@@ -2,8 +2,12 @@ import React from 'react';
 import For from 'react';
 import PropTypes from 'prop-types';
 import {PanelHeaderBack, Input, Panel, PanelHeader, HeaderButton, Search, Group, Footer, List, Cell, View, FixedLayout} from '@vkontakte/vkui';
+<<<<<<< HEAD
 import Progress from "./Progress";
 import {Clusterer, ListBoxItem, ListBox, YMaps, Map, Placemark } from 'react-yandex-maps';
+=======
+import { ListBoxItem, ListBox, YMaps, Map, Placemark } from 'react-yandex-maps';
+>>>>>>> e96ce073d5e19f6d571583cd01d77b2775bce38d
 import '../styles/main.css';
 
 import pointsPlastic from "./data/pointPlastic.json"

@@ -4,28 +4,22 @@ import {
     Panel,
     PanelHeader,
     HeaderButton,
-    Search,
-    Group,
-    Footer,
-    List,
-    Cell,
     View,
     IOS,
     platform
 } from '@vkontakte/vkui';
-import Progress from "./Progress";
-import GuideItem from "../components/guideitem";
-import {pages} from "../constants";
+
+import GalleryItem from "../components/galaryitem/galaryitem";
+import {galleries, guides} from "../constants";
 import Icon24Back from '@vkontakte/icons/dist/24/back';
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 
-/*TODO: make it be as class*/
 export class Guides extends React.Component {
     constructor(props) {
         super(props);
         this.osname = platform();
         this.state = {
-            activePanel: "guides",
+            activePanel: "gallary",
         };
         this.currentGuide = 0;
         this.handleDetailsClick = this.handleDetailsClick.bind(this);
@@ -38,13 +32,12 @@ export class Guides extends React.Component {
 
     render() {
         return (
-            <View activePanel={this.state.activePanel}>
-                <Panel id={"guides"}>
-                    <PanelHeader>Guides</PanelHeader>
+            <View id={this.props.id} activePanel={this.state.activePanel}>
+                <Panel id={"gallary"} style={{height: "300%"}}>
+                    <PanelHeader>Гайды</PanelHeader>
                     {
-                        pages.map(
-                            (item) => <GuideItem guideNumber={item.id} title={item.title} description={item.description}
-                                                 onDetailsClick={this.handleDetailsClick} image={item.image}/>
+                        galleries.map(
+                            (item) => <GalleryItem guides={item.guides} title={item.title}/>
                         )
                     }
                 </Panel>
@@ -52,20 +45,20 @@ export class Guides extends React.Component {
                     <PanelHeader
                         left=
                             {
-                                <HeaderButton onClick={() => this.setState({activePanel: "guides"})}>
+                                <HeaderButton onClick={() => this.setState({activePanel: "galary"})}>
                                     {this.osname === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}
                                 </HeaderButton>
                             }
                         addon=
                             {
-                                <HeaderButton onClick={() => this.setState({activePanel: "guides"})}>
+                                <HeaderButton onClick={() => this.setState({activePanel: "galary"})}>
                                     Назад
                                 </HeaderButton>
                             }
                     >
-                        Reading the guide with guideNumber!!!
+                        {guides[this.currentGuide].title}
                     </PanelHeader>
-
+                    {guides[this.currentGuide].article}
                 </Panel>
             </View>
         );
