@@ -23,6 +23,18 @@ export const galleries = [
         title: 'Example',
         guides: [0, 1, 1, 0, 1, 0],
     },
+    {
+        title: 'Example1',
+        guides: [1, 0, 1, 0, 1, 0],
+    },
+    {
+        title: 'Example1',
+        guides: [1, 0, 1, 0, 1, 0],
+    },
+    {
+        title: 'Example1',
+        guides: [1, 0, 1, 0, 1, 0],
+    },
 ];
 
 export const questions = [

@@ -19,46 +19,51 @@ export class Guides extends React.Component {
         super(props);
         this.osname = platform();
         this.state = {
-            activePanel: "gallary",
+            currentGuide: 0,
+            activePanel: "guides",
         };
-        this.currentGuide = 0;
-        this.handleDetailsClick = this.handleDetailsClick.bind(this);
+        this.handleGuideClick = this.handleGuideClick.bind(this);
     }
 
-    handleDetailsClick(guideNumber) {
-        this.setState({activePanel: 'reading'});
-        this.currentGuide = guideNumber;
+    handleGuideClick(guideNumber) {
+        this.setState({currentGuide: guideNumber, activePanel: 'reading'});
     }
 
     render() {
         return (
             <View id={this.props.id} activePanel={this.state.activePanel}>
-                <Panel id={"gallary"}>
+                <Panel id={"guides"}>
                     <PanelHeader>Гайды</PanelHeader>
                     {
                         galleries.map(
-                            (item) => <GalleryItem guides={item.guides} title={item.title}/>
+                            (item) => <GalleryItem guides={item.guides} title={item.title}
+                                                   onClick={(idx) => this.handleGuideClick(idx)}/>
                         )
                     }
                 </Panel>
+
                 <Panel id={"reading"}>
                     <PanelHeader
                         left=
                             {
-                                <HeaderButton onClick={() => this.setState({activePanel: "galary"})}>
+                                <HeaderButton onClick={() => this.setState({currentGuide: 0, activePanel: "guides"})}>
                                     {this.osname === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}
                                 </HeaderButton>
                             }
                         addon=
                             {
-                                <HeaderButton onClick={() => this.setState({activePanel: "galary"})}>
+                                <HeaderButton onClick={() => this.setState({currentGuide: 0, activePanel: "guides"})}>
                                     Назад
                                 </HeaderButton>
                             }
                     >
-                        {guides[this.currentGuide].title}
+                        {
+                            guides[this.state.currentGuide].title
+                        }
                     </PanelHeader>
-                    {guides[this.currentGuide].article}
+                    {
+                        guides[this.state.currentGuide].article
+                    }
                 </Panel>
             </View>
         );
