@@ -2,12 +2,7 @@ import React from 'react';
 import For from 'react';
 import PropTypes from 'prop-types';
 import {PanelHeaderBack, Input, Panel, PanelHeader, HeaderButton, Search, Group, Footer, List, Cell, View, FixedLayout} from '@vkontakte/vkui';
-<<<<<<< HEAD
-import Progress from "./Progress";
 import {Clusterer, ListBoxItem, ListBox, YMaps, Map, Placemark } from 'react-yandex-maps';
-=======
-import { ListBoxItem, ListBox, YMaps, Map, Placemark } from 'react-yandex-maps';
->>>>>>> e96ce073d5e19f6d571583cd01d77b2775bce38d
 import '../styles/main.css';
 
 import pointsPlastic from "./data/pointPlastic.json"
@@ -39,21 +34,17 @@ export default class MyMap extends React.Component {
 
     getPointDataForPlastic() {
         return {
-            balloonContentBody: "Дом пластика",
-            clusterCaption: "Дом пластика"
+            balloonContent: "Дом пластика"
         };
     };
     getPointDataForPaper() {
         return {
-            balloonContentBody: "Дом бумаги",
-            clusterCaption: "Дом бумаги"
+            balloonContent: "Дом бумаги"
         };
     };
     getPointDataForGlases() {
         return {
-            iconColor: "red",
-            balloonContentBody: "Время и стекло",
-            clusterCaption: "Время истекло"
+            balloonContent: "Время и стекло"
         };
     };
 
@@ -69,7 +60,7 @@ export default class MyMap extends React.Component {
     };
     getPointOptionsForGlases() {
         return {
-            iconColor: "red"
+            iconColor: "blue"
         };
     };
 
@@ -91,6 +82,7 @@ export default class MyMap extends React.Component {
     }
 
     printFromJson(j, properties, options) {
+        console.log(properties);
         return (j.map((coordinates, idx) => (
             <Placemark
               key={idx}
@@ -105,9 +97,9 @@ export default class MyMap extends React.Component {
 
     printPlacemark() {
         return ( <div>
-            { this.state.isPlastic && this.printFromJson(pointsPlastic, this.getPointDataForPlastic, this.getPointOptionsForPlastic)}
-            { this.state.isPaper && this.printFromJson(pointsPapes, this.getPointDataForPaper, this.getPointOptionsForPaper)}
-            { this.state.isGlases && this.printFromJson(pointsGlases, this.getPointDataForGlases, this.getPointOptionsForGlases)}
+            { this.state.isPlastic && this.printFromJson(pointsPlastic, this.getPointDataForPlastic(), this.getPointOptionsForPlastic())}
+            { this.state.isPaper && this.printFromJson(pointsPapes, this.getPointDataForPaper(), this.getPointOptionsForPaper())}
+            { this.state.isGlases && this.printFromJson(pointsGlases, this.getPointDataForGlases(), this.getPointOptionsForGlases())}
             </div>
             );
     }
@@ -125,8 +117,8 @@ export default class MyMap extends React.Component {
                         <YMaps>
                                 <Map className="all_window"
                                     defaultState = {{ 
-                                        center: [55.751574, 37.573856], 
-                                    zoom: 9 
+                                        center: [59.939095, 30.315868], 
+                                    zoom: 10
                                         }}
                                 >
                                     <ListBox data = {{ content: "Что относим на свалку?" }}>
