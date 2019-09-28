@@ -1,17 +1,27 @@
-import defaultImage from './images/default.jpg'
+import defaultImage from './images/default.jpg';
+import React from 'react';
 
-export const pages = [
+export const guides = [
     {
         id: 0,
         title: "Почему эта важно",
         description: "Рассматривается статистика загрезнения пластиком",
         image: defaultImage,
+        article: <div>Теккккст</div>,
     },
     {
         id: 1,
         title: "Виды пластика",
         description: "Основные категории пластика с их описаниями",
         image: defaultImage,
+        article: "",
+    },
+];
+
+export const galleries = [
+    {
+        title: 'Example',
+        guides: [0, 1, 1, 0],
     },
 ];
 
