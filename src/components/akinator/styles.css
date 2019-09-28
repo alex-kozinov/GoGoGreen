@@ -1,0 +1,57 @@
+.upper-side {
+    height: 80%;
+}
+
+.lower-side {
+    height: 20%;
+}
+
+.dialog-colors {
+    background: #969696;
+}
+
+.texts-styles {
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 40%;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.question-shape {
+    width: 120px;
+    height: 63px;
+    border-radius: 13px;
+}
+
+.question-pos {
+    position: absolute;
+    left: 37%;
+    top: 10%;
+}
+
+
+.akinator-window {
+    width: 200px;
+    height: 100px;
+    line-height: 50px;
+    margin-bottom: 1rem;
+    border-radius: 10%;
+    font-size: 1.5em;
+    color: #fff;
+    text-align: center;
+    background: #c4c8cc;
+}
+
+.akinator-position {
+    position:relative;
+    width: 20%;
+    left:35%;
+    right:65%
+}
+
+.answer {
+
+}
