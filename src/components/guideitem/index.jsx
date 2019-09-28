@@ -15,12 +15,10 @@ export class GuideItem extends React.Component {
             <Group title={this.props.title}>
                 <Cell multiline
                       size='l'
-                      description={this.props.description}
-                      before={<Avatar type="image" src="https://pp.userapi.com/c845220/v845220642/7cacc/XzhH5b7FSKY.jpg"
-                                      size={80}/>}
-                      bottomContent={<Button>Подробнее</Button>}
+                      before={<Avatar type="image" src={this.props.image} size={80}/>}
+                      bottomContent={<Button onClick={() => this.props.onDetailsClick(this.props.guideNumber)}>Подробнее</Button>}
                 >
-
+                    {this.props.description}
                 </Cell>
             </Group>
         );
