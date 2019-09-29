@@ -277,11 +277,11 @@ export const guides = [
 
 export const galleries = [
     {
-        title: 'Зелёный панцырь',
+        title: 'Введение',
         guides: [0, 1, 2],
     },
     {
-        title: 'Боевой панцырь',
+        title: 'Пластик',
         guides: [3, 4, 5, 6, 7, 8, 9],
     }
 ];
