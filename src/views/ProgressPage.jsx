@@ -41,7 +41,6 @@ class ProgressPage extends React.Component {
         let mem = this.props.getMem();
         let progress = mem['allProgress'];
         let mode = mem['mode'];
-        console.log(progress[mode]);
         return progress[mode];
     }
 

@@ -66,7 +66,6 @@ class App extends React.Component {
         if (updated) {
             this.setState(updateState);
         }
-        console.log(this.mem)
     }
 
     onStoryChange(entity) {
