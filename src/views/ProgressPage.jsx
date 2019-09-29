@@ -52,7 +52,7 @@ class ProgressPage extends React.Component {
     render() {
         return <View id={this.props.id} activePanel={this.state.activePanel}>
         <QuestPanel id={'progress'} getMem={this.props.getMem} setMem={this.setMem}/>
-        <GuideReader id={'reading'} guideID={this.getGuideID()} backClick={this.handleBackClick}/>
+        <GuideReader id={'reading'} guideID={this.getGuideID() - 1} backClick={this.handleBackClick}/>
         </View>
     }
 }

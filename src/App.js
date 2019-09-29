@@ -25,15 +25,15 @@ class App extends React.Component {
             mode: "plastic",
             allProgress: {
                 "plastic": 3,
-                "glass": 0
+                "intro": 0
             },
             startProgress: {
                 "plastic": 3,
-                "glass": 0
+                "intro": 0
             },
             maxProgress: {
                 "plastic": 10,
-                "glass": 3
+                "intro": 3
             }
         };
 

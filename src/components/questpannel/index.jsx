@@ -92,7 +92,6 @@ class QuestPanel extends React.Component {
         let allProgress = mem.allProgress;
         let maxProgress = mem.maxProgress[currMode];
         allProgress[currMode] = Math.min(allProgress[currMode] + 1, maxProgress);
-        console.log(allProgress)
         let updatedProps = {
             activePanel: "reading",
             allProgress: allProgress,
@@ -106,34 +105,37 @@ class QuestPanel extends React.Component {
         return <Panel id={this.props.id}>
             <PanelHeader>
                 <PanelHeaderContent aside={<Icon16Dropdown/>} onClick={this.toggleContext}>
-                    {this.state.mode === 'plastic' ? 'Пластик' : 'Стекло'}
+                    {this.state.mode === 'plastic' ? 'Пластик' : 'Введение'}
                 </PanelHeaderContent>
             </PanelHeader>
             <HeaderContext opened={this.state.contextOpened} onClose={this.toggleContext}>
                 <List>
                     <Cell
-                        before={<Icon24Users/>}
+                        asideContent={this.state.mode === "intro" ? <Icon24Done fill="var(--accent)"/> : null}
+                        onClick={this.select}
+                        data-mode="intro"
+                    >
+                        Введение
+                    </Cell>
+                    <Cell
                         asideContent={this.state.mode === "plastic" ? <Icon24Done fill="var(--accent)"/> : null}
                         onClick={this.select}
                         data-mode="plastic"
                     >
                         Пластик
                     </Cell>
-                    <Cell
-                        before={<Icon24Settings/>}
-                        asideContent={this.state.mode === "glass" ? <Icon24Done fill="var(--accent)"/> : null}
-                        onClick={this.select}
-                        data-mode="glass"
-                    >
-                        Стекло
-                    </Cell>
+
                 </List>
             </HeaderContext>
-            <Div
-                style={{height: '40vh', width: '80vw', justifyContent: 'center', marginTop: '5vh', marginBottom: '5vh'}}
+            <div
+                style={{height: '40vh', width: '80vw', align: 'center', margin: 'auto', marginTop: '5vh', marginBottom: '5vh'}}
                 align='center'>
-                <img src={cherepahen} style={{height: '100%', width: 'auto'}}/>
-            </Div>
+                {window.outerWidth > window.outerHeight ?
+                    <img src={cherepahen} style={{height: '100%', width: 'auto'}}/>
+                    :
+                    <img src={cherepahen} style={{height: 'auto', width: '100%'}}/>
+                }
+            </div>
             <Div style={{marginLeft: '10vw', marginRight: '10vw'}}>
                 <InfoRow title="Прогресс озеленения">
                     <Progress value={this.getProgress()}/>
