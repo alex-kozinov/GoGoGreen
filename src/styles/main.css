@@ -8,3 +8,44 @@
   font-size: 120%;
   margin: 20px 20% 0px 20%;
 }
+
+.PanelHeader__container {
+  background: #12f9ab;
+}
+.PanelHeader-content {
+  background: #12f9ab;
+  color: black;
+}
+.PanelHeader-right {
+  background: #12f9ab;
+}
+.PanelHeader-left-in {
+  color: black;
+  background: #12f9ab;
+}
+.PanelHeader-addon {
+  color: black;
+  background: #12f9ab;
+}
+
+.Progress__in {
+  height: 20px;
+  color: black;
+  background: #12f9ab;
+}
+.InfoRow__title {
+  font-size: 15px;
+}
+.Button__in {
+  color:black;
+}
+.Button {
+  border: 2px solid black;
+  color:black;
+}
+.TabbarItem__in:hover {
+  color: #12f9ab;
+}
+.TabbarItem__in:visited {
+  color: #12f9ab;
+}
