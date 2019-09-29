@@ -24,22 +24,44 @@ import Icon24Users from '@vkontakte/icons/dist/24/users';
 import Icon16Dropdown from '@vkontakte/icons/dist/16/dropdown';
 import cherepahen from '../../imgs/turtle.png'
 
+
 class QuestPanel extends React.Component {
     constructor(props) {
         super(props);
 
         this.osname = platform();
 
+        let mem = this.props.getMem();
+
         this.state = {
-            activePanel: "progress",
-            progress: {'plastic': 40, 'glass': 40},
+            allProgress: mem.allProgress,
             contextOpened: false,
-            mode: "plastic"
+            mode: mem.mode
         };
 
-        this.changeProgress = this.changeProgress.bind(this);
+        this.setMem = this.setMem.bind(this);
         this.toggleContext = this.toggleContext.bind(this);
         this.select = this.select.bind(this);
+        this.getProgress = this.getProgress.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+
+    setMem(newMem) {
+        let updateState = {};
+        let updated = false;
+        for (let x in newMem) {
+            if (x in this.state) {
+                updateState[x] = newMem[x];
+                updated = true;
+            }
+        }
+
+        this.props.setMem(newMem);
+
+        if (updated) {
+            this.setState(updateState);
+        }
     }
 
     toggleContext() {
@@ -49,23 +71,35 @@ class QuestPanel extends React.Component {
     select(e) {
         const mode = e.currentTarget.dataset.mode;
 
-        this.setState({mode: mode});
+        this.setMem({mode: mode});
 
         requestAnimationFrame(this.toggleContext);
     }
 
-    changeProgress(val) {
-        let newProgress = this.state.progress;
-        let newValue = newProgress[this.state.mode] + val;
-        newValue = Math.min(100, newValue);
-        newValue = Math.max(0, newValue);
-        newProgress[this.state.mode] = newValue;
+    getProgress() {
+        let mem = this.props.getMem();
+        let mode = mem['mode'];
+        let progress = mem['allProgress'][mode];
+        let maxProgress = mem['maxProgress'][mode];
+        let startPorgress = mem['startProgress'][mode];
 
-        this.setState({progress: newProgress});
+        return 100 * (progress - startPorgress) / (maxProgress - startPorgress)
     }
 
     handleClick() {
+        let mem = this.props.getMem();
+        let currMode = mem.mode;
+        let allProgress = mem.allProgress;
+        let maxProgress = mem.maxProgress[currMode];
+        allProgress[currMode] = Math.min(allProgress[currMode] + 1, maxProgress);
+        console.log(allProgress)
+        let updatedProps = {
+            activePanel: "reading",
+            allProgress: allProgress,
+            mode: currMode
+        };
 
+        this.setMem(updatedProps);
     }
 
     render() {
@@ -102,11 +136,11 @@ class QuestPanel extends React.Component {
             </Div>
             <Div style={{marginLeft: '10vw', marginRight: '10vw'}}>
                 <InfoRow title="Прогресс озеленения">
-                    <Progress value={this.state.progress[this.state.mode]}/>
+                    <Progress value={this.getProgress()}/>
                 </InfoRow>
             </Div>
             <Div align='center'>
-                <Button level="outline" size='xl' style={{marginTop: '10vh'}} onClick={() => {}}>
+                <Button level="outline" size='xl' style={{marginTop: '10vh'}} onClick={this.handleClick}>
                     Go
                 </Button>
             </Div>
@@ -117,6 +151,8 @@ class QuestPanel extends React.Component {
 
 QuestPanel.propTypes = {
     id: PropTypes.string.isRequired,
+    getMem: PropTypes.func.isRequired,
+    setMem: PropTypes.func.isRequired,
 };
 
 export default QuestPanel;

@@ -28,11 +28,11 @@ class GuideReader extends React.Component {
                     }
             >
                 {
-                    guides[this.props.guideID].title
+                    guides[this.props.guideID - 1].title
                 }
             </PanelHeader>
             {
-                guides[this.props.guideID].article
+                guides[this.props.guideID - 1].article
             }
         </Panel>
     }

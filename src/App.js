@@ -18,11 +18,55 @@ class App extends React.Component {
     constructor(props) {
         super(props);
 
+        this.mem = {
+            activeStory: 'progress',
+            callBackYmaps: {},
+            activePanel: "progress",
+            mode: "plastic",
+            allProgress: {
+                "plastic": 3,
+                "glass": 0
+            },
+            startProgress: {
+                "plastic": 3,
+                "glass": 0
+            },
+            maxProgress: {
+                "plastic": 10,
+                "glass": 3
+            }
+        };
+
         this.state = {
             activeStory: 'progress',
             callBackYmaps: {}
         };
+
         this.onStoryChange = this.onStoryChange.bind(this);
+        this.getMem = this.getMem.bind(this);
+        this.setMem = this.setMem.bind(this);
+    }
+
+    getMem() {
+        return this.mem;
+    }
+
+    setMem(newMem) {
+        let updateState = {};
+        let updated = false;
+        for (let x in newMem) {
+            if (x in this.state) {
+                updateState[x] = newMem[x];
+                updated = true;
+            }
+        }
+
+        this.mem = {...this.mem, ...newMem};
+
+        if (updated) {
+            this.setState(updateState);
+        }
+        console.log(this.mem)
     }
 
     onStoryChange(entity) {
@@ -59,7 +103,7 @@ class App extends React.Component {
                     ><Icon28Place/></TabbarItem>
                 </Tabbar>
             }>
-                <ProgressPage id="progress"/>
+                <ProgressPage id="progress" setMem={this.setMem} getMem={this.getMem}/>
                 <Helper id="helper"/>
                 <Guides id="guides"/>
                 <MyMap id="mymap"/>
